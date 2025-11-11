@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Programs — SALGC | Smart-Village Skills Development</title>
+<meta name="description" content="SALGC accredited 5-day skills programs: renewable solar energy, apiculture, rabbit farming, crop production, and mixed farming."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { scroll-behavior: smooth; }
+  header { position: sticky; top:0; background:white; z-index:50; }
+  .modal { display: none; position: fixed; inset:0; z-index:50; align-items:center; justify-content:center; background: rgba(0,0,0,0.5); padding:1rem; }
+  .modal-content { background:white; border-radius:0.75rem; max-width:28rem; width:100%; padding:1.5rem; position:relative; }
+</style>
+</head>
+<body class="antialiased text-slate-800 bg-gradient-to-br from-[#f7fbf8] to-[#eef7ff]">
+
+<!-- HEADER -->
+<header class="container mx-auto px-6 py-4 flex items-center justify-between shadow-md">
+  <a href="index.html" class="flex items-center gap-3">
+    <img src="images/logo.png" alt="SALGC Logo" class="h-14 w-auto rounded-lg">
+    <div>
+      <div class="text-xl font-extrabold text-[#007B5E]">South African Leadership</div>
+      <div class="text-xs text-gray-500 tracking-wide">Gentlemen's Club</div>
+    </div>
+  </a>
+  <div class="hidden md:flex items-center space-x-6">
+    <a href="index.html" class="text-sm hover:underline">Home</a>
+    <a href="about.html" class="text-sm hover:underline">About</a>
+    <a href="programs.html" class="text-sm hover:underline font-bold">Programs</a>
+    <a href="products.html" class="text-sm hover:underline">Products & Services</a>
+    <button id="registerBtn" class="ml-2 px-4 py-2 bg-[#007B5E] text-white rounded hover:brightness-95">Contact Us</button>
+  </div>
+</header>
+
+<main class="pt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="programs">
+
+  <!-- HERO -->
+  <section class="text-center py-12">
+    <h1 class="text-4xl font-extrabold text-[#007B5E]">SALGC 5-Day SETA-Accredited Programs</h1>
+    <p class="mt-4 text-slate-700 max-w-2xl mx-auto">
+      Practical, accredited skills training designed to build Smart-Villages, create employment, and foster sustainable self-reliance across South Africa.
+    </p>
+  </section>
+
+  <!-- PROGRAM CARDS -->
+  <section class="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 py-12">
+
+    <!-- Program 1 -->
+    <div class="bg-white rounded-xl shadow p-6 flex flex-col lg:flex-row items-center gap-6">
+      <img src="images/solar.png" alt="Solar training" class="rounded-lg object-cover w-full lg:w-1/2 h-64">
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold text-[#007B5E]">Renewable Solar Energy Training</h3>
+        <p class="mt-2 text-slate-600 text-sm">Hands-on training to prepare communities for sustainable solar installations, mitigating loadshedding and opening new green-energy income streams.</p>
+        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
+          <li>5-Day theory and practical program</li>
+          <li>Includes solar panel installation & maintenance</li>
+          <li>Graduation after 6 months post-training mentorship</li>
+        </ul>
+        <button class="mt-4 px-4 py-2 bg-[#F9B233] text-slate-900 rounded hover:brightness-95 registerCourse" data-course="Renewable Solar Energy Training">Register</button>
+      </div>
+    </div>
+
+    <!-- Program 2 -->
+    <div class="bg-white rounded-xl shadow p-6 flex flex-col lg:flex-row items-center gap-6">
+      <img src="images/beet.jpg" alt="Bee farming" class="rounded-lg object-cover w-full lg:w-1/2 h-64">
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold text-[#007B5E]">Apiculture (Bee-Farming)</h3>
+        <p class="mt-2 text-slate-600 text-sm">Bee-farming requires minimal capital and offers diverse income streams — honey, candles, pollination, and bee-removal services.</p>
+        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
+          <li>Understanding Bee-Farming (Removals)</li>
+          <li>Honey Production & Processing</li>
+          <li>Bee-Farming Economy & Profit Models</li>
+          <li>Products & Service Development</li>
+        </ul>
+        <button class="mt-4 px-4 py-2 bg-[#F9B233] text-slate-900 rounded hover:brightness-95 registerCourse" data-course="Apiculture (Bee-Farming)">Register</button>
+      </div>
+    </div>
+
+    <!-- Program 3 -->
+    <div class="bg-white rounded-xl shadow p-6 flex flex-col lg:flex-row items-center gap-6">
+      <img src="images/rabbits.jpg" alt="Rabbit farming" class="rounded-lg object-cover w-full lg:w-1/2 h-64">
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold text-[#007B5E]">Cuniculture (Rabbit-Farming)</h3>
+        <p class="mt-2 text-slate-600 text-sm">Low-cost entry farming ideal for youth and women entrepreneurs. Teaches sustainable production for lean meat, fur, and manure.</p>
+        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
+          <li>Modern rabbit husbandry</li>
+          <li>Breeding & disease control</li>
+          <li>Processing & marketing techniques</li>
+          <li>AgriSETA-aligned certification</li>
+        </ul>
+        <button class="mt-4 px-4 py-2 bg-[#F9B233] text-slate-900 rounded hover:brightness-95 registerCourse" data-course="Cuniculture (Rabbit-Farming)">Register</button>
+      </div>
+    </div>
+
+    <!-- Program 4 -->
+    <div class="bg-white rounded-xl shadow p-6 flex flex-col lg:flex-row items-center gap-6">
+      <img src="images/veg.jpg" alt="Crop farming" class="rounded-lg object-cover w-full lg:w-1/2 h-64">
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold text-[#007B5E]">Plant Farming (Crop Production)</h3>
+        <p class="mt-2 text-slate-600 text-sm">Supports emerging farmers with essential crop production knowledge to ensure food security, employment, and income generation.</p>
+        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
+          <li>Soil & pest management</li>
+          <li>Sustainable farming practices</li>
+          <li>Market readiness and business skills</li>
+        </ul>
+        <button class="mt-4 px-4 py-2 bg-[#F9B233] text-slate-900 rounded hover:brightness-95 registerCourse" data-course="Plant Farming (Crop Production)">Register</button>
+      </div>
+    </div>
+
+    <!-- Program 5 -->
+    <div class="bg-white rounded-xl shadow p-6 flex flex-col lg:flex-row items-center gap-6">
+      <img src="images/picture24.png" alt="Mixed farming" class="rounded-lg object-cover w-full lg:w-1/2 h-64">
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold text-[#007B5E]">Mixed Farming (Crop & Livestock Integration)</h3>
+        <p class="mt-2 text-slate-600 text-sm">Teaches integration of crop and livestock systems for better resource use, resilience, and diversified income.</p>
+        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
+          <li>Efficient land & feed management</li>
+          <li>Farm business administration</li>
+          <li>Environmental sustainability</li>
+        </ul>
+        <button class="mt-4 px-4 py-2 bg-[#F9B233] text-slate-900 rounded hover:brightness-95 registerCourse" data-course="Mixed Farming (Crop & Livestock Integration)">Register</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#007B5E] text-white py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+      <div>
+        <img src="images/logo.png" class="h-12 mb-4" alt="SALGC Logo">
+        <p>Reviving human conscience and giving back hope to communities nationwide.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-4">Quick Links</h3>
+        <ul>
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#programs" class="hover:underline">Programs</a></li>
+          <li><a href="products.html" class="hover:underline">Products & Services</a></li>
+          <li><a href="#executive" class="hover:underline">Executive Team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-4">Contact</h3>
+        <p>Project Management Office, Atrium on 5th, Nelson Mandela Square, Sandton</p>
+        <p>Tel: +27 72 433 1240</p>
+        <p>Email: info@salgc.org</p>
+      </div>
+    </div>
+    <p class="text-center mt-6 text-sm">© 2025 South African Leadership Gentlemen's Club. All rights reserved.</p>
+  </footer>
+
+</main>
+
+<!-- REGISTER MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <button id="closeModal" class="absolute top-2 right-2 text-gray-500 font-bold">✕</button>
+    <h3 class="font-semibold text-lg mb-4">Register for Training</h3>
+    <form id="registerForm" class="space-y-3">
+      <input type="text" id="rname" required placeholder="Full name" class="w-full p-2 border rounded" />
+      <input type="email" id="remail" required placeholder="Email" class="w-full p-2 border rounded" />
+      <input type="tel" id="rphone" placeholder="Phone" class="w-full p-2 border rounded" />
+      <input type="text" id="rcourse" readonly class="w-full p-2 border rounded bg-slate-50" />
+      <select id="rlocation" class="w-full p-2 border rounded">
+        <option value="">Select training location</option>
+        <option>Sandton (Johannesburg)</option>
+        <option>Pretoria</option>
+        <option>Brits</option>
+        <option>Other</option>
+      </select>
+      <div class="flex justify-end gap-2">
+        <button type="button" id="closeModal2" class="px-4 py-2 border rounded">Cancel</button>
+        <button type="submit" class="px-4 py-2 bg-[#007B5E] text-white rounded">Submit Registration</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Modal open/close functions
+const modal = document.getElementById('modal');
+const rcourse = document.getElementById('rcourse');
+function openRegister(course='') {
+  rcourse.value = course;
+  modal.style.display = 'flex';
+}
+function closeModalFunc() {
+  modal.style.display = 'none';
+  document.getElementById('registerForm').reset();
+}
+document.getElementById('closeModal').addEventListener('click', closeModalFunc);
+document.getElementById('closeModal2').addEventListener('click', closeModalFunc);
+
+// Assign buttons on program cards to open modal
+document.querySelectorAll('.registerCourse').forEach(btn => {
+  btn.addEventListener('click', e => {
+    openRegister(e.currentTarget.dataset.course);
+  });
+});
+
+// Handle form submission
+document.getElementById('registerForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const data = {
+    name: document.getElementById('rname').value,
+    email: document.getElementById('remail').value,
+    phone: document.getElementById('rphone').value,
+    course: document.getElementById('rcourse').value,
+    location: document.getElementById('rlocation').value || 'Not specified',
+    timestamp: new Date().toISOString()
+  };
+  const regs = JSON.parse(localStorage.getItem('salgc_regs') || '[]');
+  regs.push(data);
+  localStorage.setItem('salgc_regs', JSON.stringify(regs));
+  alert('Registration received! We will contact you soon.');
+  closeModalFunc();
+});
+</script>
+
+</body>
+</html>
