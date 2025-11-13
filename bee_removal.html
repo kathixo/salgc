@@ -6,12 +6,14 @@
 <title>Bee Removal — SALGC</title>
 <meta name="description" content="Professional bee removal services by SALGC — safe and ethical removal of bees from homes and farms.">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>.glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }</style>
+<style>
+  .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
+</style>
 </head>
 <body class="antialiased text-slate-800 bg-gradient-to-br from-[#f7fbf8] to-[#eef7ff]">
 
 <!-- HEADER -->
-<header class="container mx-auto px-6 py-4 flex items-center justify-between shadow-md">
+<header class="container mx-auto px-6 py-4 flex flex-wrap items-center justify-between shadow-md">
   <a href="index.html" class="flex items-center gap-3">
     <img src="images/logo.png" alt="SALGC Logo" class="h-14 w-auto rounded-lg">
     <div>
@@ -19,14 +21,18 @@
       <div class="text-xs text-gray-500 tracking-wide">Gentlemen's Club</div>
     </div>
   </a>
-  <div class="hidden md:flex items-center space-x-6">
+  
+  <!-- Desktop nav -->
+  <div class="hidden md:flex items-center space-x-6 mt-4 md:mt-0 w-full md:w-auto flex-wrap">
     <a href="index.html" class="text-sm hover:underline">Home</a>
     <a href="#hero" class="text-sm hover:underline">Bee Removal</a>
     <a href="programs.html" class="text-sm hover:underline">Programs</a>
     <a href="products.html" class="text-sm hover:underline">Products & Services</a>
     <button id="orderBtn" class="ml-2 px-4 py-2 rounded-md bg-[#F9B233] text-slate-900 text-sm hover:brightness-95">Book Now</button>
   </div>
-  <div class="md:hidden">
+  
+  <!-- Mobile nav toggle -->
+  <div class="md:hidden mt-2 w-full flex justify-end">
     <button id="mobileToggle" class="p-2 rounded-md bg-white/50 glass">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -34,7 +40,9 @@
     </button>
   </div>
 </header>
-<div id="mobileMenu" class="hidden md:hidden mt-2">
+
+<!-- Mobile menu -->
+<div id="mobileMenu" class="hidden md:hidden mt-2 w-full">
   <div class="flex flex-col gap-2 p-3 bg-white/60 glass rounded-b-md">
     <a href="index.html" class="py-2">Home</a>
     <a href="#hero" class="py-2">Bee Removal</a>
@@ -45,46 +53,47 @@
 </div>
 
 <!-- Back to Products -->
-  <div class="mb-6">
-    <a href="products.html" class="inline-block px-4 py-2 bg-[#007B5E] text-white rounded hover:brightness-95">&larr; Back to Products</a>
-  </div>
+<div class="mb-6 px-4 sm:px-6 lg:px-8">
+  <a href="products.html" class="inline-block px-4 py-2 bg-[#007B5E] text-white rounded hover:brightness-95">&larr; Back to Products</a>
+</div>
 
 <main class="pt-28" id="hero">
 
-<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-2 gap-10 items-center">
+<!-- HERO / PRODUCT SECTION -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
   <div>
-    <h1 class="text-3xl sm:text-4xl font-extrabold">Safe Bee Removal</h1>
-    <p class="mt-4 text-slate-700">Our professional team ensures safe, ethical, and effective bee removal from homes, farms, or commercial properties. We protect both people and the bees.</p>
-    <ul class="mt-5 text-sm text-slate-600 list-disc pl-5 space-y-1">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold">Safe Bee Removal</h1>
+    <p class="mt-4 text-slate-700 text-sm sm:text-base md:text-lg">Our professional team ensures safe, ethical, and effective bee removal from homes, farms, or commercial properties. We protect both people and the bees.</p>
+    <ul class="mt-5 text-sm sm:text-base text-slate-600 list-disc pl-5 space-y-2">
       <li>Safe removal without harming humans</li>
       <li>Relocation of bee colonies to sustainable habitats</li>
       <li>Prevent future infestations</li>
       <li>Expert team with protective equipment</li>
     </ul>
-    <div class="mt-6 flex gap-3">
-      <button id="orderNow" class="px-4 py-2 bg-[#F9B233] rounded-md text-slate-900">Book Now</button>
+    <div class="mt-6 flex gap-3 flex-wrap">
+      <button id="orderNow" class="px-4 py-2 bg-[#F9B233] rounded-md text-slate-900 hover:brightness-95">Book Now</button>
     </div>
   </div>
   <div class="rounded-xl overflow-hidden shadow-lg">
-    <img src="images/removal.jpg" alt="Bee Removal" class="w-full h-80 object-cover">
+    <img src="images/removal.jpg" alt="Bee Removal" class="w-full h-80 sm:h-96 md:h-[400px] object-cover">
   </div>
 </section>
 
 <!-- ORDER MODAL -->
 <div id="orderModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 p-4">
-  <div class="w-full max-w-md bg-white rounded-xl p-6">
+  <div class="w-full max-w-md bg-white rounded-xl p-6 sm:p-8 shadow-lg">
     <header class="flex items-center justify-between">
-      <h3 class="font-semibold text-lg">Order Bee Removal Service</h3>
-      <button id="closeModal" class="text-slate-500">✕</button>
+      <h3 class="font-semibold text-lg sm:text-xl">Order Bee Removal Service</h3>
+      <button id="closeModal" class="text-slate-500 text-lg sm:text-xl">✕</button>
     </header>
     <form id="orderForm" class="mt-4 space-y-3">
-      <input type="text" id="name" required placeholder="Full Name" class="w-full p-2 rounded-md border"/>
-      <input type="email" id="email" required placeholder="Email" class="w-full p-2 rounded-md border"/>
-      <input type="tel" id="phone" placeholder="Phone" class="w-full p-2 rounded-md border"/>
-      <textarea id="details" placeholder="Property Details / Address" class="w-full p-2 rounded-md border"></textarea>
-      <div class="flex justify-end gap-2">
-        <button type="button" id="closeModal2" class="px-4 py-2 rounded-md border">Cancel</button>
-        <button type="submit" class="px-4 py-2 rounded-md bg-[#F9B233] text-slate-900">Place Order</button>
+      <input type="text" id="name" required placeholder="Full Name" class="w-full p-2 rounded-md border text-sm sm:text-base"/>
+      <input type="email" id="email" required placeholder="Email" class="w-full p-2 rounded-md border text-sm sm:text-base"/>
+      <input type="tel" id="phone" placeholder="Phone" class="w-full p-2 rounded-md border text-sm sm:text-base"/>
+      <textarea id="details" placeholder="Property Details / Address" class="w-full p-2 rounded-md border text-sm sm:text-base"></textarea>
+      <div class="flex justify-end gap-2 flex-wrap">
+        <button type="button" id="closeModal2" class="px-4 py-2 rounded-md border text-sm sm:text-base">Cancel</button>
+        <button type="submit" class="px-4 py-2 rounded-md bg-[#F9B233] text-slate-900 text-sm sm:text-base">Place Order</button>
       </div>
     </form>
   </div>
@@ -92,14 +101,14 @@
 
 <!-- FOOTER -->
 <footer class="bg-[#007B5E] text-white py-12 mt-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-    <div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    <div class="flex flex-col items-center md:items-start">
       <img src="images/logo.png" class="h-12 mb-4" alt="SALGC Logo">
-      <p>Reviving human conscience and giving back hope to communities nationwide.</p>
+      <p class="text-sm sm:text-base">Reviving human conscience and giving back hope to communities nationwide.</p>
     </div>
     <div>
-      <h3 class="font-bold mb-4">Quick Links</h3>
-      <ul>
+      <h3 class="font-bold mb-4 text-sm sm:text-base">Quick Links</h3>
+      <ul class="text-sm sm:text-base space-y-1">
         <li><a href="#about" class="hover:underline">About</a></li>
         <li><a href="programs.html" class="hover:underline">Programs</a></li>
         <li><a href="products.html" class="hover:underline">Products & Services</a></li>
@@ -107,40 +116,47 @@
       </ul>
     </div>
     <div>
-      <h3 class="font-bold mb-4">Contact</h3>
-      <p>Project Management Office, Atrium on 5th, Nelson Mandela Square, Sandton</p>
-      <p>Tel: +27 72 433 1240</p>
-      <p>Email: info@salgc.org</p>
+      <h3 class="font-bold mb-4 text-sm sm:text-base">Contact</h3>
+      <p class="text-sm sm:text-base">Project Management Office, Atrium on 5th, Nelson Mandela Square, Sandton</p>
+      <p class="text-sm sm:text-base">Tel: +27 72 433 1240</p>
+      <p class="text-sm sm:text-base">Email: info@salgc.org</p>
     </div>
   </div>
-  <p class="text-center mt-6 text-sm">© 2025 South African Leadership Gentlemen's Club. All rights reserved.</p>
+  <p class="text-center mt-6 text-xs sm:text-sm">© 2025 South African Leadership Gentlemen's Club. All rights reserved.</p>
 </footer>
 
 <script>
-const mobileToggle=document.getElementById('mobileToggle');
-const mobileMenu=document.getElementById('mobileMenu');
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
 mobileToggle?.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
 
-const modal=document.getElementById('orderModal');
-const openBtns=['orderNow','orderBtn','orderBtn2'].map(id=>document.getElementById(id)).filter(Boolean);
-openBtns.forEach(b=>b.addEventListener('click',()=>{modal.classList.remove('hidden'); modal.style.display='flex';}));
+const modal = document.getElementById('orderModal');
+const openBtns = ['orderNow','orderBtn','orderBtn2'].map(id => document.getElementById(id)).filter(Boolean);
+openBtns.forEach(b => b.addEventListener('click', ()=>{
+  modal.classList.remove('hidden'); 
+  modal.style.display='flex';
+}));
 
-document.getElementById('closeModal').addEventListener('click',closeModal);
-document.getElementById('closeModal2').addEventListener('click',closeModal);
-function closeModal(){ modal.classList.add('hidden'); modal.style.display='none'; document.getElementById('orderForm').reset(); }
+document.getElementById('closeModal').addEventListener('click', closeModal);
+document.getElementById('closeModal2').addEventListener('click', closeModal);
+function closeModal(){
+  modal.classList.add('hidden'); 
+  modal.style.display='none'; 
+  document.getElementById('orderForm').reset();
+}
 
 document.getElementById('orderForm').addEventListener('submit', e=>{
   e.preventDefault();
-  const order={
+  const order = {
     name:document.getElementById('name').value,
     email:document.getElementById('email').value,
     phone:document.getElementById('phone').value,
     details:document.getElementById('details').value,
     timestamp:new Date().toISOString()
   };
-  const orders=JSON.parse(localStorage.getItem('salgc_bee_orders')||'[]');
+  const orders = JSON.parse(localStorage.getItem('salgc_bee_orders') || '[]');
   orders.push(order);
-  localStorage.setItem('salgc_bee_orders',JSON.stringify(orders));
+  localStorage.setItem('salgc_bee_orders', JSON.stringify(orders));
   alert('Thank you! Your bee removal request has been received.');
   closeModal();
 });

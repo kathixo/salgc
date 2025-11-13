@@ -11,6 +11,7 @@
   header { position: sticky; top:0; background:white; z-index:50; }
   .modal { display: none; position: fixed; inset:0; z-index:50; align-items:center; justify-content:center; background: rgba(0,0,0,0.5); padding:1rem; }
   .modal-content { background:white; border-radius:0.75rem; max-width:28rem; width:100%; padding:1.5rem; position:relative; }
+  .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
 </style>
 </head>
 <body class="antialiased text-slate-800 bg-gradient-to-br from-[#f7fbf8] to-[#eef7ff]">
@@ -24,6 +25,8 @@
       <div class="text-xs text-gray-500 tracking-wide">Gentlemen's Club</div>
     </div>
   </a>
+
+  <!-- Desktop Menu -->
   <div class="hidden md:flex items-center space-x-6">
     <a href="index.html" class="text-sm hover:underline">Home</a>
     <a href="about.html" class="text-sm hover:underline">About</a>
@@ -31,7 +34,27 @@
     <a href="products.html" class="text-sm hover:underline">Products & Services</a>
     <button id="registerBtn" class="ml-2 px-4 py-2 bg-[#007B5E] text-white rounded hover:brightness-95">Contact Us</button>
   </div>
+
+  <!-- Mobile Toggle -->
+  <div class="md:hidden">
+    <button id="mobileToggle" class="p-2 rounded-md bg-white/50 glass">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
 </header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden mt-2">
+  <div class="flex flex-col gap-2 p-3 bg-white/60 glass rounded-b-md">
+    <a href="index.html" class="py-2">Home</a>
+    <a href="about.html" class="py-2">About</a>
+    <a href="programs.html" class="py-2 font-bold">Programs</a>
+    <a href="products.html" class="py-2">Products & Services</a>
+    <button id="registerBtnMobile" class="mt-2 px-4 py-2 bg-[#007B5E] text-white rounded">Contact Us</button>
+  </div>
+</div>
 
 <main class="pt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="programs">
 
@@ -179,25 +202,22 @@
 </div>
 
 <script>
-// Modal open/close functions
+// Mobile toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+// Modal open/close
 const modal = document.getElementById('modal');
 const rcourse = document.getElementById('rcourse');
-function openRegister(course='') {
-  rcourse.value = course;
-  modal.style.display = 'flex';
-}
-function closeModalFunc() {
-  modal.style.display = 'none';
-  document.getElementById('registerForm').reset();
-}
+function openRegister(course='') { rcourse.value = course; modal.style.display='flex'; }
+function closeModalFunc() { modal.style.display='none'; document.getElementById('registerForm').reset(); }
 document.getElementById('closeModal').addEventListener('click', closeModalFunc);
 document.getElementById('closeModal2').addEventListener('click', closeModalFunc);
 
-// Assign buttons on program cards to open modal
+// Assign program buttons to open modal
 document.querySelectorAll('.registerCourse').forEach(btn => {
-  btn.addEventListener('click', e => {
-    openRegister(e.currentTarget.dataset.course);
-  });
+  btn.addEventListener('click', e => openRegister(e.currentTarget.dataset.course));
 });
 
 // Handle form submission

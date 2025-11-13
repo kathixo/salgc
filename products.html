@@ -9,11 +9,12 @@
 <style>
   body { scroll-behavior: smooth; }
   header { position: sticky; top:0; background:white; z-index:50; }
+  .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
 </style>
 </head>
 <body class="antialiased text-slate-800 bg-gradient-to-br from-[#f7fbf8] to-[#eef7ff]">
 
-<!-- HEADER (same as home) -->
+<!-- HEADER -->
 <header class="container mx-auto px-6 py-4 flex items-center justify-between shadow-md">
   <a href="index.html" class="flex items-center gap-3">
     <img src="images/logo.png" alt="SALGC Logo" class="h-14 w-auto rounded-lg">
@@ -22,6 +23,7 @@
       <div class="text-xs text-gray-500 tracking-wide">Gentlemen's Club</div>
     </div>
   </a>
+  <!-- Desktop Menu -->
   <div class="hidden md:flex items-center space-x-6">
     <a href="index.html" class="text-sm hover:underline">Home</a>
     <a href="index.html#about" class="text-sm hover:underline">About</a>
@@ -29,7 +31,26 @@
     <a href="products.html" class="text-sm hover:underline font-bold">Products & Services</a>
     <a href="index.html#executive" class="text-sm hover:underline">Executive Team</a>
   </div>
+  <!-- Mobile Toggle -->
+  <div class="md:hidden">
+    <button id="mobileToggle" class="p-2 rounded-md bg-white/50 glass">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
 </header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden mt-2">
+  <div class="flex flex-col gap-2 p-3 bg-white/60 glass rounded-b-md">
+    <a href="index.html" class="py-2">Home</a>
+    <a href="index.html#about" class="py-2">About</a>
+    <a href="index.html#programs" class="py-2">Programs</a>
+    <a href="products.html" class="py-2 font-bold">Products & Services</a>
+    <a href="index.html#executive" class="py-2">Executive Team</a>
+  </div>
+</div>
 
 <main class="pt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -125,8 +146,10 @@
 </footer>
 
 <script>
-  // footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Mobile toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileToggle?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
 </script>
 
 </body>
